@@ -4,25 +4,18 @@ Welcome to the repository for an advanced face verification and classification p
 
 ## Project Overview
 
-This project addresses two significant challenges in computer vision:
+To achieve good performance on a verification task, the project follows the following procedure:
 
-- **Face Classification**: A multi-class classification problem where the goal is to correctly identify a given face from a known set of identities.
+- **Face Classification**: A multi-class classification problem where the goal is to correctly identify a given face from a known set of identities. This allows us to train a model that can generate informative facial embeddings. We further fine tune the model using ArcFace loss to enhance the embeddings' discriminative power.
 - **Face Verification**: Relating unknown identities to known ones based on the similarity in generated embeddings, a quintessential task in security and personalized services.
 
 ### Modified ConvNext CNN
 
-We've adapted the cutting-edge ConvNext CNN architecture, tuning it specifically for the nuances of facial recognition tasks. This modified network is tailored to capture the intricate features and distinctions in human faces, making it highly effective for classification purposes.
+We've adapted the ConvNext CNN architecture, modifying certain features for facial recognition tasks.
 
 ### ArcFace Loss
 
-For verification, we've employed ArcFace loss, which enhances the discriminative power of the embeddings. It works by mapping facial features into an embedding space where geometrically, the angle between different faces represents their similarity.
-
-
-## Features
-
-- **High Accuracy**: Achieve precise classifications (>90%) and verifications with our fine-tuned model.
-- **Robust Embeddings**: Generate robust facial embeddings that can be used for a variety of applications.
-- **Scalability**: Our solution scales gracefully with your dataset size, maintaining performance.
+For verification, we've employed ArcFace loss, which enhances the discriminative power of the embeddings. It works by introducing an angular margin between classes by modifying the angle between the feature vector and the corresponding weight vector. This margin helps to make the decision boundaries more discriminative.
 
 ## Getting Started
 
